@@ -1,4 +1,7 @@
 using D3_MiniChallengeFiveToSeven_Endpoints.Services.MadLib;
+using D3_MiniChallengeFiveToSeven_Endpoints.Services.OddOrEven;
+using D3_MiniChallengeFiveToSeven_Endpoints.Services.ReversAlfaNum;
+using D3_MiniChallengeFiveToSeven_Endpoints.Services.ReversNum;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMadLibService, MadLibService>();
+builder.Services.AddScoped<IOddOrEvenService, OddOrEvenService>();
+builder.Services.AddScoped<IReversAlfaNumService, ReversAlfaNumService>();
+builder.Services.AddScoped<IReversNumService, ReversNumService>();
 
 var app = builder.Build();
 
